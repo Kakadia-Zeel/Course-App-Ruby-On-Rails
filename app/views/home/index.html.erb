@@ -1,0 +1,27 @@
+
+<h3>List of All Students</h3>
+
+<table  class="table table-striped table-hover table-bordered text-center mt-3">
+  <thead class="table-dark">
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Email</th>
+
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= student.name %></td>
+        <td><%= student.age %></td>
+        <td><%= student.email %></td>
+
+        <td><%= link_to 'See more', home_student_details_path(@student, student_id: student.id), method: :get,
+        class:"btn-sm btn-primary text-decoration-none" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

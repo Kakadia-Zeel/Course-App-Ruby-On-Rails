@@ -1,0 +1,26 @@
+<h3>List of My Courses</h3>
+
+<table class="table table-striped table-hover table-bordered  text-center">
+  <thead class="table-dark">
+    <tr>
+      <th>Course Name</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @courses.each do |course| %>
+      <%if current_student == course.student%>
+        <tr>
+          <td><%= course.name %></td>
+          <td><%= link_to 'Edit', edit_course_path(course),class:"btn-sm text-decoration-none btn-warning" %></td>
+          <td><%= link_to 'Delete', course, method: :delete, data: { confirm: 'Are you sure?' },class:"btn-sm text-decoration-none btn-danger " %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add New Course', new_course_path, class:"btn btn-info" %>

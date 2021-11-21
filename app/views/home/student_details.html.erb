@@ -1,0 +1,22 @@
+
+ <div class="p-5 mb-4  rounded-3" style="background-color:#1fa2ff;">
+
+ <h3>Hello I am <%= @student.name%> 👋</h3>
+
+<p>
+This is my Email : <%= @student.email %>
+</p>
+
+<p>
+    My Age is  <%= @student.age %> 
+</p>
+
+<strong>My Courses are  :  </strong>
+<br>
+<% @courses.each do |c| %>
+    <div>📕<%= c.name%></div>
+ <% end %>
+
+</div>
+
+<%= link_to 'Back', root_path,class:"btn btn-dark "%>
